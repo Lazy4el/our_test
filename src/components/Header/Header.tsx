@@ -17,8 +17,12 @@ const Header:FC = () => {
             label:(<Link to='/about'>О нас</Link>),
             key: 'about'
         },
+        {
+            label:(<Link to='/test'>Тестируем материал ui</Link>),
+            key: 'test'
+        },
     ]
-    const [selectedMenuItem, setselectedMenuItem] = useState('home');
+    const [selectedMenuItem, setselectedMenuItem] = useState('test');
 
     const handleSelectItem = ({key}:{key:string}):void => {
             setselectedMenuItem(key)
