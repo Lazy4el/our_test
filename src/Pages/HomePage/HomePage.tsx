@@ -1,9 +1,10 @@
 import {FC} from "react";
+import AboutCompany from "../../components/AboutCompany/AboutCompany";
 
 const HomePage: FC = () => {
     return (
         <div>
-            Я Главная страница
+           <AboutCompany />
         </div>
     )
 }
