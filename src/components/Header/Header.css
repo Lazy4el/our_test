@@ -68,3 +68,8 @@
     font-size: 12px;
     font-weight: 600;
 }
+@media (max-width: 400px) {
+    .logo-general-span{
+        display: none;
+    }
+}
