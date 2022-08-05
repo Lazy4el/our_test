@@ -1,5 +1,5 @@
 
-import { FC,  useState} from "react";
+import { FC,  useState, useEffect} from "react";
 import {headerLinks} from './data'
 import {AppBar, Toolbar,  Container, Drawer, Button, Divider } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -9,7 +9,7 @@ import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturi
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
-import {Link } from "react-router-dom";
+import {Link, useLocation } from "react-router-dom";
 import './Header.css'
 import {style} from './headerMatStyle'
 import logoImg from '../../assets/img/logo.png'
@@ -17,15 +17,23 @@ import logoImg from '../../assets/img/logo.png'
 
 
 const Header: FC = () => {
-
+    
+    const { pathname } = useLocation();
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [items, setItems] = useState([...headerLinks]);
+    const [curPage, setCurPage] = useState(pathname)
 
-    const handleActiveButton = (key:string):void => {
+    
+    useEffect(()=> {
+        setCurPage(pathname);
+        handleActiveButton()
+    }, [curPage, pathname])
+
+    const handleActiveButton = (key?:string ):void => {
        setItems(()=> {
            return items.map(item => {
-               if(key === item.key){
+               if(curPage === item.link){
                    return {...item, isActive: true}
                }
                return {...item, isActive: false}

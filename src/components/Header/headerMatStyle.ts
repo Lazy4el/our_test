@@ -1,7 +1,7 @@
 export const style = {
     mainContainer: {
         margin: "18px 0",
-        maxWidth: '100% !important'
+        maxWidth: '100% !important',
     },
     toolbar: {
         minHeight:'0px !important'
@@ -50,7 +50,8 @@ export const style = {
         background: '#2C52B7',
         borderRadius: '24px',
         fontSize:'14px',
-        lineHeight:'21px'
+        lineHeight:'21px',
+        whiteSpace: 'nowrap',
     },
 
     feedbackButtonAside: {
