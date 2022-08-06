@@ -3,7 +3,7 @@ import { FC,  useState, useEffect} from "react";
 import {headerLinks} from './data'
 import {AppBar, Toolbar,  Container, Drawer, Button, Divider } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
-import LastPageIcon from '@mui/icons-material/LastPage';
+import CloseIcon from '@mui/icons-material/Close';
 import HomeIcon from '@mui/icons-material/Home';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
@@ -46,7 +46,6 @@ const Header: FC = () => {
             <AppBar sx={style.app} position='sticky' >
                 <Container sx={style.mainContainer} >
                     <Toolbar sx={style.toolbar}>
-
                         <Link to='/'  className='button button-logo' >
                             <img className='logo' src={logoImg} alt='Company Logo'/>
                             <span className='logo-general-span'>НефтеХим<span className='logo-ink-span'>Полимер</span></span>
@@ -67,10 +66,10 @@ const Header: FC = () => {
                         <Container sx={style.nohidden}>
                             <MenuIcon onClick={() =>  setIsDrawerOpen(true)} sx={style.drawerIcon}/>
                             <Drawer onClose={ () => setIsDrawerOpen(false)} sx={style.drawer} anchor='right' open={isDrawerOpen}>
-                                <LastPageIcon
+                                <CloseIcon
                                     onClick={() =>  setIsDrawerOpen(false)}
                                     sx ={style.drawerIntoIcon}/>
-                                <Divider variant="middle"/>
+                                <Divider  sx={style.divider} variant="middle"/>
                                 {
                                     items.map(el => {
                                         return (
@@ -87,7 +86,7 @@ const Header: FC = () => {
                                         )
                                     })
                                 }
-                                <Divider variant="middle"/>
+                                <Divider  sx={style.divider} variant="middle"/>
                                 <span className='contacts'>Контакты</span>
                                 <label className='contacts contacts-label'>
                                     <a className='contacts-link' href='tel:+78432125700'>Позвоните нам</a>
@@ -98,7 +97,7 @@ const Header: FC = () => {
                                     <a className='contacts-link' href='mailto:office@nhpkazan.ru'>Напишите нам</a>
                                     <AlternateEmailIcon sx={style.linkIcons}/>
                                 </label>
-                                <Divider sx={{marginTop: '20px'}} variant="middle"/>
+                                <Divider sx={style.divider} variant="middle"/>
                                 <Button sx={style.feedbackButtonAside} variant="contained">Оставить заявку</Button>
                                 <img className='logo aside-logo' src={logoImg} alt='Company Logo'/>
                                 <span className='logo-aside-span'>НефтеХим<span className='logo-ink-span'>Полимер</span></span>
