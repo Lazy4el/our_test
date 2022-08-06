@@ -1,11 +1,15 @@
-import {title} from '../../interfaces/interfaces'
+import Typography from '@mui/material/Typography';
+import {TitleText} from '../../interfaces/interfaces'
 
-function Title({title}:title) {
+function Title(prop:TitleText) {
+
+  const {title, h2, h3, h4} =prop
   
-  return (
-    <div className="Title">
+  
+  return (    
+    <Typography variant = {h2||h3||h4} className="Title">
         {title}
-    </div>
+    </Typography>
   );
 }
 

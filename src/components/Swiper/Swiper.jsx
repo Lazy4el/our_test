@@ -1,6 +1,8 @@
 import { Swiper as SwiperPage, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y, EffectCube, Autoplay } from "swiper";
 import "swiper/css/bundle";
+import logo from "../../assets/img/logo.png";
+import "./Swiper.css";
 
 function Swiper() {
   return (
@@ -17,29 +19,32 @@ function Swiper() {
         disableOnInteraction: false,
       }}
       speed={2000}
-      coubeEffect={{
-        shadow: true,
-        slideShadow: true,
-        shadowOffset: 20,
-        shadowScale: 1.44,
-      }}
       loop={true}
       navigation={false}
       pagination={false}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiVVrzvJxFLcIOE9oE0OfI7UdITM_hz_flw" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiVVrzvJxFLcIOE9oE0OfI7UdITM_hz_flw" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiVVrzvJxFLcIOE9oE0OfI7UdITM_hz_flw" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiVVrzvJxFLcIOE9oE0OfI7UdITM_hz_flw" />
+      <SwiperSlide
+        style={{
+          textAlign: "center",
+          padding: 20,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 10,
+        }}
+      >
+        <img src={logo} style={{ width: 100, height: 100 }} />
+        <p
+          className="swiper__text"
+          style={{
+            fontWeight: 700,
+            fontSize: 18,
+          }}
+        >
+          НефтеХимПолимер
+          {/* <span style={{ color: "#385b95" }}>НефтеХим</span>
+          <span style={{ color: "#62caec" }}>Полимер</span> */}
+        </p>
       </SwiperSlide>
     </SwiperPage>
   );
