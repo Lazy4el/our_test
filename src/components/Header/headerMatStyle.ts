@@ -59,7 +59,7 @@ export const style = {
     feedbackButtonAside: {
         width: '200px',
         height: '50px',
-        margin: '20px auto auto auto',
+        margin: '20px auto 45% auto',
         padding: '16px 16px',
         background: '#2C52B7',
         borderRadius: '10px',
