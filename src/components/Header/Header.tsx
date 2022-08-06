@@ -17,7 +17,6 @@ import logoImg from '../../assets/img/logo.png'
 
 
 const Header: FC = () => {
-    
     const { pathname } = useLocation();
 
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
