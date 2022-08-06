@@ -1,0 +1,6 @@
+.swiper__text {
+  background-color: #2aa5a0;
+  background-image: linear-gradient(90deg, #385b95, #62caec);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

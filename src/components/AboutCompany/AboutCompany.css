@@ -1,0 +1,13 @@
+.AboutCompany {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+  align-items: center;
+}
+.AboutCompany__description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
