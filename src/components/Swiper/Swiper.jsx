@@ -1,8 +1,8 @@
-import { Swiper as SwiperPage, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y, EffectCube, Autoplay } from "swiper";
-import "swiper/css/bundle";
-import logo from "../../assets/img/logo.png";
-import "./Swiper.css";
+import { Swiper as SwiperPage, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, A11y, EffectCube, Autoplay } from 'swiper';
+import 'swiper/css/bundle';
+import logo from '../../assets/img/logo.png';
+import './Swiper.css';
 
 function Swiper() {
   return (
@@ -12,9 +12,16 @@ function Swiper() {
       spaceBetween={50}
       slidesPerView={1}
       slidesPerGroup={1}
-      effect={"cube"}
+      grabCursor={true}
+      effect={'cube'}
+      cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 60,
+        shadowScale: 0.9,
+      }}
       autoplay={{
-        delay: 3000,
+        delay: 1000,
         stopOnLastSlide: false,
         disableOnInteraction: false,
       }}
@@ -23,28 +30,27 @@ function Swiper() {
       navigation={false}
       pagination={false}
     >
-      <SwiperSlide
-        style={{
-          textAlign: "center",
-          padding: 20,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 10,
-        }}
-      >
-        <img src={logo} style={{ width: 100, height: 100 }} />
-        <p
-          className="swiper__text"
+      <SwiperSlide>
+        <div
           style={{
-            fontWeight: 700,
-            fontSize: 18,
+            padding: 20,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 10,
           }}
         >
-          НефтеХимПолимер
-          {/* <span style={{ color: "#385b95" }}>НефтеХим</span>
-          <span style={{ color: "#62caec" }}>Полимер</span> */}
-        </p>
+          <img src={logo} style={{ width: 100, height: 100 }} />
+          <p
+            className="swiper__text"
+            style={{
+              fontWeight: 700,
+              fontSize: 18,
+            }}
+          >
+            НефтеХимПолимер
+          </p>
+        </div>
       </SwiperSlide>
     </SwiperPage>
   );

@@ -1,0 +1,16 @@
+.Customers {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.Customers__box {
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+
+.Customers__span {
+  padding-left: 20px;
+  display: block;
+}

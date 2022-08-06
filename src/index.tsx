@@ -31,6 +31,7 @@ const theme = createTheme({
       color: h4Color
     },
     body1:{
+      color: '#3e3e3e',
       fontSize: 16,
     },
 
