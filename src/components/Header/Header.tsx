@@ -1,6 +1,4 @@
-
-import { FC,  useState, useEffect} from "react";
-import {headerLinks} from './data'
+import { FC,  useState, useEffect, useContext} from "react";
 import {AppBar, Toolbar,  Container, Drawer, Button, Divider } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,6 +8,8 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import {Link, useLocation } from "react-router-dom";
+import { MyContext } from "../../Store/Store";
+import FeedbackButton from "../Buttons/FeedbackButton";
 import './Header.css'
 import {style} from './headerMatStyle'
 import logoImg from '../../assets/img/logo.png'
@@ -17,12 +17,15 @@ import logoImg from '../../assets/img/logo.png'
 
 
 const Header: FC = () => {
+    // используем контекст, нужны импорты
+    const store = useContext(MyContext)
+    const { homeLinks } = store
+
     const { pathname } = useLocation();
-
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [items, setItems] = useState([...headerLinks]);
+    const [items, setItems] = useState([...homeLinks]);
     const [curPage, setCurPage] = useState(pathname)
-
+    
     
     useEffect(()=> {
         setCurPage(pathname);
@@ -62,7 +65,7 @@ const Header: FC = () => {
                             }
 
                         </Container>
-                        <Button sx={style.feedbackButton} variant="contained">Оставить заявку</Button>
+                        <FeedbackButton />
                         <Container sx={style.nohidden}>
                             <MenuIcon onClick={() =>  setIsDrawerOpen(true)} sx={style.drawerIcon}/>
                             <Drawer onClose={ () => setIsDrawerOpen(false)} sx={style.drawer} anchor='right' open={isDrawerOpen}>
@@ -77,11 +80,12 @@ const Header: FC = () => {
                                                 <Link
                                                     key={el.key}
                                                     onClick={()=> setIsDrawerOpen(false)}
-                                                     className='test-link' to={el.link}>
+                                                    className={`test-link nav-link ${el.isActive && 'test-link--active'}`}
+                                                     to={el.link}>
                                                      {el.label}
                                                     {el.label==='Главная' && <HomeIcon sx={style.linkIcons}/>}
                                                     {el.label==='Продукты' && <PrecisionManufacturingIcon sx={style.linkIcons}/>}
-                                                    {el.label==='О нас' && <MenuBookIcon sx={style.linkIcons}/>}
+                                                    {el.label==='Контакты' && <MenuBookIcon sx={style.linkIcons}/>}
                                                 </Link>
                                         )
                                     })

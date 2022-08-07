@@ -1,26 +1,17 @@
-import React from 'react'
 import { Button} from "@mui/material";
 const style = {
-    feedbackButton: {
-        width: '200px',
-        height: '50px',
-        display:  { xs: 'none', md: 'block' },
-        background: '#2C52B7',
-        borderRadius: '24px',
-        fontSize:'14px',
-        lineHeight:'21px',
-        whiteSpace: 'nowrap',
-    },
-
     feedbackButtonAside: {
-        width: '150px',
-        height: '40px',
-        margin: '20px auto',
-        padding: '7px',
-        background: '#2C52B7',
-        borderRadius: '24px',
-        fontSize:'14px',
-        lineHeight: '21px'
+      width: '200px',
+      height: '50px',
+      display:  { xs: 'none', md: 'block' },
+      borderRadius: '10px',
+      fontSize:'14px',
+      lineHeight:'21px',
+      whiteSpace: 'nowrap',
+      background: '#385b95',
+      ":hover, :active":{
+        background: '#62caec',
+      }
     },
 }
 
