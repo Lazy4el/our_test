@@ -1,27 +1,77 @@
-import Title from "../../components/Title/Title";
+import Title from '../../components/Title/Title';
 import Container from '@mui/material/Container';
 import BodyText from '../BodyText/BodyText';
-import Swiper from '../Swiper/Swiper'
-import './AboutCompany.css'
+import Swiper from '../SwiperLogo/SwiperLogo';
+import './AboutCompany.css';
+import { motion } from 'framer-motion';
+
+const blockAnimationLeft = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};
+const blockAnimationRight = {
+  hidden: {
+    x: 100,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};
 
 function AboutCompany() {
   return (
     <Container>
       <div className="AboutCompany">
-        <div className="AboutCompany__description">
-          <Title title ='О компании' h2='h2' />
-          <Title title ='ООО «НефтеХимПолимер»' h3='h3' />
-          <BodyText text ="Компания «НефтеХимПолимер» основана в феврале 2009 года." />
-          <BodyText text ="Основными видами деятельности компании является производство и поставка химической продукции различного назначения, сервиные услуги и техническая поддержка решений заказчиков." />
-          {/* <Title title ='Становление компании можно разделить на три этапа:' h4='h4' /> */}
-          {/* <BodyText text ="2009 год установление партнеских отношений с ведущими предприятиями химической отрасли такими как ПАО«Казаньоргсинтез» и ПАО«Нижнекамскнефтехим». Анализ рынка, определение стратегии бизнеса и начало оптовых продаж технической химии." /> */}
-          {/* <BodyText text ="2011 год организация собственного автопарка грузовых машин позволяющего максимально быстро поставлять и гарантировать заказчикам качество продукции минуя третьих лиц." /> */}
-          {/* <BodyText text ="2016-2017 годы ознаменованы организацией производственной площадки. Начинается производство собственной продукции, а также появляется техническая возможность синтеза химических решений заказчика. В тесном сотрудничестве с ведущими специалистами Казанского Химико-Технологического Университета компания создает инновационные продукты." /> */}
-          {/* <BodyText text ="Блягодаря накопленному опыту и техническим возможностям компания «НефтеХимПолимер» дает ряд приемуществ для заказчиков: поставка гарантированно качественной продукции в картчайшие сроки, изготовление продукции по заданной рецептуре, экономическую эффективность и экологическую безопасность." /> */}
-        </div>
-        <div className="AboutCompany__swiper">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimationLeft}
+          viewport={{ amount: 0.4, once: true }}
+          className="AboutCompany__title"
+        >
+          <Title title="О компании" h2="h2" xStart={-100} />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimationRight}
+          viewport={{ amount: 0.4, once: true }}
+          className="AboutCompany__swiper"
+        >
           <Swiper></Swiper>
-        </div>
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimationLeft}
+          viewport={{ amount: 0.4, once: true }}
+        >
+          <Title title="ООО «НефтеХимПолимер»" h3="h3" xStart={-100} />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimationLeft}
+          viewport={{ amount: 0.4, once: true }}
+        >
+          <BodyText text="Компания ООО «НефтеХимПолимер» основана в феврале 2009 года." />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={blockAnimationLeft}
+          viewport={{ amount: 0.4, once: true }}
+        >
+          <BodyText text="Основными видами деятельности компании является производство и поставка химической продукции различного назначения, сервиные услуги и техническая поддержка решений заказчиков." />
+        </motion.div>
       </div>
     </Container>
   );

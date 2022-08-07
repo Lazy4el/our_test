@@ -1,0 +1,31 @@
+.SwiperLogo {
+  max-width: 300px;
+}
+
+.swiper__text {
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #2aa5a0;
+  background-image: linear-gradient(90deg, #385b95, #62caec);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.swiper__img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 895px) {
+  .swiper__text {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .swiper__img {
+    width: 50px;
+    height: 50px;
+  }
+  .SwiperLogo {
+    max-width: 150px;
+    margin-bottom: 100px;
+  }
+}
