@@ -61,10 +61,13 @@ export const style = {
         height: '50px',
         margin: '20px auto 45% auto',
         padding: '16px 16px',
-        background: '#2C52B7',
         borderRadius: '10px',
         fontSize:'14px',
-        lineHeight: '21px'
+        lineHeight: '21px',
+        background: '#385b95',
+        ":hover, :active":{
+          background: '#62caec',
+        }
     },
     linkIcons: {
         position: 'absolute',
