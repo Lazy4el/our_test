@@ -26,11 +26,12 @@ export const style = {
         display:  { xs: 'block', md: 'none' }
     },
     drawer: {
-        display:  { xs: 'block', md: 'none' }
+        display:  { xs: 'block', md: 'none' },
+        minWidth: '320px'
     },
     drawerIntoIcon:{
         color:'black',
-        margin: '10px auto 10px auto',
+        margin: '10px 320px 10px 29px',
         cursor: 'pointer',
         ':active': {
             background: '#F1F5F9',
@@ -38,7 +39,8 @@ export const style = {
         }
     },
     divider: {
-        width: '80%'
+        width: '80%',
+        margin:'20px auto'
     },
     drawerIcon: {
         cursor:'pointer'
@@ -48,24 +50,24 @@ export const style = {
         height: '50px',
         display:  { xs: 'none', md: 'block' },
         background: '#2C52B7',
-        borderRadius: '24px',
+        borderRadius: '10px',
         fontSize:'14px',
         lineHeight:'21px',
         whiteSpace: 'nowrap',
     },
 
     feedbackButtonAside: {
-        width: '150px',
-        height: '40px',
-        margin: '20px auto',
-        padding: '7px',
+        width: '200px',
+        height: '50px',
+        margin: '20px auto auto auto',
+        padding: '16px 16px',
         background: '#2C52B7',
-        borderRadius: '24px',
+        borderRadius: '10px',
         fontSize:'14px',
         lineHeight: '21px'
     },
     linkIcons: {
         position: 'absolute',
-        right:'10px'
+        right:'30px'
     }
 }
