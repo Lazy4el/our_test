@@ -1,0 +1,10 @@
+.SwiperCompanions {
+  height: 200px;
+  margin: 100px 0;
+}
+.SwiperCompanions .swiper-wrapper {
+  align-items: center !important;
+}
+.SwiperCompanions__img {
+  max-width: 250px;
+}

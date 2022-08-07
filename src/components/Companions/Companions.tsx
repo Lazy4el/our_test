@@ -1,5 +1,6 @@
 import Title from '../Title/Title';
 import { motion } from 'framer-motion';
+import SwiperCompanions from '../SwiperCompanions/SwiperCompanions';
 
 const blockAnimation = {
   hidden: {
@@ -22,6 +23,7 @@ export default function Companions() {
       className="Companions"
     >
       <Title title="Наши партнеры" h2="h2" />
+      <SwiperCompanions />
     </motion.div>
   );
 }
