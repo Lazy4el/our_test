@@ -26,6 +26,7 @@ const theme = createTheme({
       maxWidth: 400,
       backgroundColor: '#62caec',
       padding: 15,
+      textAlign: 'left',
     },
     h3: {
       fontSize: h3Size,
