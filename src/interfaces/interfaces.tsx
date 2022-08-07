@@ -1,5 +1,8 @@
 export interface TitleText {
-    title:string;
-    [key: string]:any
+  title: string;
+  [key: string]: any;
 }
-export interface bodyText {text:string}
+export interface bodyText {
+  text: string;
+  [key: string]: any;
+}

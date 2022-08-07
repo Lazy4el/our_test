@@ -6,11 +6,16 @@
 }
 
 .Customers__box {
-  margin: 0 auto;
-  transform: translateX(-50%);
+  margin: 0 0 auto 100px;
 }
 
 .Customers__span {
   padding-left: 20px;
   display: block;
+}
+
+@media (max-width: 576px) {
+  .Customers__box {
+    margin: 0 0 auto 20px;
+  }
 }

@@ -1,13 +1,13 @@
-import { Swiper as SwiperPage, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, EffectCube, Autoplay } from 'swiper';
 import 'swiper/css/bundle';
 import logo from '../../assets/img/logo.png';
-import './Swiper.css';
+import './SwiperLogo.css';
 
-function Swiper() {
+function SwiperLogo() {
   return (
-    <SwiperPage
-      style={{ maxWidth: 300 }}
+    <Swiper
+      className="SwiperLogo"
       modules={[Navigation, Pagination, A11y, EffectCube, Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
@@ -40,20 +40,12 @@ function Swiper() {
             gap: 10,
           }}
         >
-          <img src={logo} style={{ width: 100, height: 100 }} />
-          <p
-            className="swiper__text"
-            style={{
-              fontWeight: 700,
-              fontSize: 18,
-            }}
-          >
-            НефтеХимПолимер
-          </p>
+          <img src={logo} className="swiper__img" alt="НефтеХимПолимер" />
+          <p className="swiper__text">НефтеХимПолимер</p>
         </div>
       </SwiperSlide>
-    </SwiperPage>
+    </Swiper>
   );
 }
 
-export default Swiper;
+export default SwiperLogo;

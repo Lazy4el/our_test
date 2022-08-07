@@ -12,12 +12,7 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 50px;
-  flex: row;
   align-items: center;
-  transform: translateX(-15%);
-}
-.StagesFormation__stage:nth-of-type(2n) {
-  transform: translateX(15%);
 }
 
 .StagesFormation__Icon {
@@ -27,4 +22,15 @@
   border-radius: 50%;
   background-color: #62caec;
   color: #385b95;
+}
+
+@media (max-width: 576px) {
+  .StagesFormation__stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .StagesFormation__stage:nth-of-type(2n) {
+    flex-direction: column-reverse;
+  }
 }

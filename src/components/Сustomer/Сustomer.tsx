@@ -1,35 +1,47 @@
 import Title from '../Title/Title';
-// import BodyText from '../BodyText/BodyText';
 import './Customers.css';
 import { Box, Step, StepLabel, Stepper, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const steps = [
-  'Поставка гарантированно качественной продукции в картчайшие сроки',
+  'Поставка гарантированно качественной продукции в картчайшие сроки.',
   'Изготовление продукции по заданной рецептуре.',
   'Экономическая эффективность и экологическая безопасность.',
-  '1',
-  '2',
-  '3',
-  '4',
 ];
+
+const blockAnimation = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};
 export default function Customers() {
   return (
-    <div className="Customers">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      variants={blockAnimation}
+      viewport={{ amount: 0.4, once: true }}
+      className="Customers"
+    >
       <Title title="Преимущества для заказчиков" h2="h2" />
-      {/* <BodyText text="Блягодаря накопленному опыту и техническим возможностям компания «НефтеХимПолимер» дает ряд приемуществ для заказчиков." /> */}
       <Box sx={{ maxWidth: 400 }} className="Customers__box">
         <Stepper activeStep={steps.length} orientation="vertical">
           {steps.map((label) => (
             <Step key={label}>
               <StepLabel>
-                <Typography>
-                  <span className="Customers__span">{label}</span>{' '}
+                <Typography variant="body2">
+                  <span className="Customers__span">{label}</span>
                 </Typography>
               </StepLabel>
             </Step>
           ))}
         </Stepper>
       </Box>
-    </div>
+    </motion.div>
   );
 }
