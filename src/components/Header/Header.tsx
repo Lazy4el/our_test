@@ -85,7 +85,7 @@ const Header: FC = () => {
                                                      {el.label}
                                                     {el.label==='Главная' && <HomeIcon sx={style.linkIcons}/>}
                                                     {el.label==='Продукты' && <PrecisionManufacturingIcon sx={style.linkIcons}/>}
-                                                    {el.label==='О нас' && <MenuBookIcon sx={style.linkIcons}/>}
+                                                    {el.label==='Контакты' && <MenuBookIcon sx={style.linkIcons}/>}
                                                 </Link>
                                         )
                                     })
