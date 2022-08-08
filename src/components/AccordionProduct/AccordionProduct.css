@@ -1,0 +1,20 @@
+.AccordionProduct {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 40px;
+  text-align: left;
+}
+
+.AccordionProduct__Accordion_item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.AccordionProduct__titleCategory {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  grid-column: 1/5;
+}
