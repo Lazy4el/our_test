@@ -1,6 +1,6 @@
-import "./ContainerBg.css";
+import './ContainerBg.css';
 
 function ContainerBg() {
-  return <div className="ContainerBg">будет картинка но хз какая</div>;
+  return <div className="ContainerBg"></div>;
 }
 export default ContainerBg;

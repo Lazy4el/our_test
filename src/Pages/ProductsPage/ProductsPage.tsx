@@ -1,9 +1,11 @@
-import {FC} from "react";
-
+import { FC } from 'react';
+import AccordionProduct from '../../components/AccordionProduct/AccordionProduct';
 
 const productsPage: FC = () => {
   return (
-      <div>Я страница продуктов</div>
-  )
-}
-export  default productsPage
+    <div>
+      <AccordionProduct />
+    </div>
+  );
+};
+export default productsPage;
