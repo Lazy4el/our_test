@@ -1,5 +1,5 @@
 import { FC,  useState, useEffect, useContext} from "react";
-import {AppBar, Toolbar,  Container, Drawer, Button, Divider } from "@mui/material";
+import {AppBar, Toolbar,  Container, Drawer, Button, Divider, Dialog, DialogTitle } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import HomeIcon from '@mui/icons-material/Home';
@@ -13,6 +13,7 @@ import FeedbackButton from "../Buttons/FeedbackButton";
 import './Header.css'
 import {style} from './headerMatStyle'
 import logoImg from '../../assets/img/logo.png'
+import FeedbackForm from "../FeedbackForm/FeedbackForm";
 
 
 
@@ -25,12 +26,12 @@ const Header: FC = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [items, setItems] = useState([...homeLinks]);
     const [curPage, setCurPage] = useState(pathname)
-    
+    const [isOpen, setIsOpen] = useState(false)
     
     useEffect(()=> {
         setCurPage(pathname);
         handleActiveButton()
-    }, [curPage, pathname])
+    }, [curPage, pathname, isOpen])
 
     const handleActiveButton = (key?:string ):void => {
        setItems(()=> {
@@ -43,9 +44,21 @@ const Header: FC = () => {
 
        })
     }
-
+    const handleOpen = () => {
+        setIsOpen(()=> !isOpen)
+        setIsDrawerOpen(()=> !isDrawerOpen)
+    }
     return (
         <div>
+                <Dialog
+                    open={isOpen}
+                    onClose={()=>setIsOpen(false)}
+                    >
+                     <DialogTitle id="alert-dialog-title">
+                       <FeedbackForm/>
+                    </DialogTitle>
+              </Dialog>
+              
             <AppBar sx={style.app} position='sticky' >
                 <Container sx={style.mainContainer} >
                     <Toolbar sx={style.toolbar}>
@@ -65,7 +78,11 @@ const Header: FC = () => {
                             }
 
                         </Container>
-                        <FeedbackButton />
+                        <Button 
+                        sx={style.feedbackButton} 
+                        variant="contained"
+                        onClick={handleOpen}
+                        >Оставить заявку</Button>
                         <Container sx={style.nohidden}>
                             <MenuIcon onClick={() =>  setIsDrawerOpen(true)} sx={style.drawerIcon}/>
                             <Drawer onClose={ () => setIsDrawerOpen(false)} sx={style.drawer} anchor='right' open={isDrawerOpen}>
@@ -102,7 +119,10 @@ const Header: FC = () => {
                                     <AlternateEmailIcon sx={style.linkIcons}/>
                                 </label>
                                 <Divider sx={style.divider} variant="middle"/>
-                                <Button sx={style.feedbackButtonAside} variant="contained">Оставить заявку</Button>
+                                <Button 
+                                sx={style.feedbackButtonAside} 
+                                onClick={handleOpen}
+                                variant="contained">Оставить заявку</Button>
                                 <img className='logo aside-logo' src={logoImg} alt='Company Logo'/>
                                 <span className='logo-aside-span'>НефтеХим<span className='logo-ink-span'>Полимер</span></span>
                                 <span className='copyright-aside-span'>ООО «НефтеХимПолимер» <br/> Copyright © 2018<br/> Все права защищены.</span>

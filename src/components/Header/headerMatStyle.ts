@@ -49,22 +49,26 @@ export const style = {
         width: '200px',
         height: '50px',
         display:  { xs: 'none', md: 'block' },
-        background: '#2C52B7',
         borderRadius: '10px',
         fontSize:'14px',
         lineHeight:'21px',
-        whiteSpace: 'nowrap',
+        background: '#385b95',
+        whiteSpace:'nowrap',
+        ":hover, :active":{
+          background: '#62caec',
+        }
     },
 
     feedbackButtonAside: {
         width: '200px',
         height: '50px',
-        margin: '20px auto 45% auto',
+        margin: '20px auto auto auto',
         padding: '16px 16px',
         borderRadius: '10px',
         fontSize:'14px',
         lineHeight: '21px',
         background: '#385b95',
+        whiteSpace:'nowrap',
         ":hover, :active":{
           background: '#62caec',
         }

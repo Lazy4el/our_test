@@ -1,20 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
-import { Button, Divider} from "@mui/material";
+import { Button, Dialog, DialogTitle, Divider} from "@mui/material";
 import {headerLinks} from '../Header/data'
 import logoImg from '../../assets/img/logo.png'
 import {Link, To } from "react-router-dom";
 import {footerMaterialStyle} from './footerMatStyle'
 
 import s from './Footer.module.css'
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
 
 function Footer() {
+
+    const [isOpen, setIsOpen] = useState(false)
+    
+    const handleOpen = () => {
+        setIsOpen(()=> !isOpen)
+    }
+
   return (
     <Box sx={{ flexGrow: 1, marginTop: '20px' }}>
+         <Dialog
+                    open={isOpen}
+                    onClose={()=>setIsOpen(false)}
+                    >
+                     <DialogTitle id="alert-dialog-title">
+                       <FeedbackForm/>
+                    </DialogTitle>
+              </Dialog>
         <Divider variant="middle"/>
         <Grid  wrap='nowrap' container spacing={1} columnSpacing={10 } direction={{xs:'column-reverse', sm: 'row'}}  sx={footerMaterialStyle.gridContainer}>
         <Grid  item xs={4} md={6} sx={{textAlign:{md:'start', xs:'initial'}}}>
@@ -58,7 +74,10 @@ function Footer() {
                     {<AlternateEmailIcon sx={null}/>}
                     office@nhpkazan.ru
                 </a>
-            <Button sx={footerMaterialStyle.feedbackButtonAside} variant="contained">Оставить заявку</Button>                   
+            <Button 
+            onClick={handleOpen}
+            sx={footerMaterialStyle.feedbackButtonAside} 
+            variant="contained">Оставить заявку</Button>                   
         </ul>
         </Grid>
         </Grid>
