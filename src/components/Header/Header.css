@@ -1,76 +1,80 @@
-
-.test-link{
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0 50px 0 10px;
-    padding: 10px 20px;
+.test-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 50px 0 10px;
+  padding: 10px 20px;
 }
 
-.test-link:hover, .test-link--active {
-    background: #F1F5F9;
-    border-radius: 16px;
-    color: #2C52B7;
+.test-link:hover,
+.test-link--active {
+  background: #f1f5f9;
+  border-radius: 16px;
+  color: #2c52b7;
 }
 
-.logo{
-    height: 100%;
+.logo {
+  height: 100%;
 }
-.button{
-    text-decoration: none;
-    cursor: pointer;
-    background: none;
-    border: none;
-    width: 40px;
-    height: 40px;
-    margin-right: auto;
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-right: auto;
 }
-.button-logo{
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+.button-logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 250px;
 }
-.logo-general-span{
-    font-weight: 600;
-    margin: 0 0 0 10px;
-    font-size: 18px;
-    color: #385b95;
+.logo-general-span {
+  font-weight: 600;
+  margin: 0 0 0 10px;
+  font-size: 18px;
+  color: #385b95;
 }
-.logo-ink-span{
-    color: #62caec;
+.logo-ink-span {
+  color: #62caec;
 }
-.nav-link{
-    margin-right: 0px;
+.nav-link {
+  margin-right: 0px;
 }
 .contacts {
-    margin: 5px 30px;
-    padding: 10px 0;
+  margin: 5px 30px;
+  padding: 10px 0;
 }
 .contacts-link {
-    margin-right: 16px;
-    color: black;
-    font-weight: 600;
+  margin-right: 16px;
+  color: black;
+  font-weight: 600;
 }
-.aside-logo{
-    margin: 0 auto ;
-    width: 40px;
-    height: 40px;
+.aside-logo {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
 }
 .logo-aside-span {
-    font-weight: 600;
-    margin: 0 auto;
-    font-size: 14px;
-    color: #385b95;
+  font-weight: 600;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #385b95;
 }
-.copyright-aside-span{
-    text-align: center;
-    margin: 10px auto;
-    font-size: 12px;
-    font-weight: 600;
+.copyright-aside-span {
+  text-align: center;
+  margin: 10px auto;
+  font-size: 12px;
+  font-weight: 600;
 }
 @media (max-width: 400px) {
-    .logo-general-span{
-        display: none;
-    }
+  .logo-general-span {
+    display: none;
+  }
+}
+.css-10ape6x-MuiContainer-root {
+  width: 50%;
 }

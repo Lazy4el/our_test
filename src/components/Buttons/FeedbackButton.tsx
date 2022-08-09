@@ -1,4 +1,5 @@
 import { Button} from "@mui/material";
+
 const style = {
     feedbackButtonAside: {
       width: '200px',
@@ -17,7 +18,7 @@ const style = {
 
 function FeedbackButton() {
   return (
-    <Button sx={style.feedbackButtonAside} variant="contained">Оставить заявку</Button>
+        <Button sx={style.feedbackButtonAside} variant="contained">Оставить заявку</Button>
   )
 }
 
