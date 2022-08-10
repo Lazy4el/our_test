@@ -17,7 +17,6 @@ import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import FormButton from '../FormGroup/FormButton';
 
 const Header: FC = () => {
-  // используем контекст, нужны импорты
   const store = useContext(MyContext);
   const { homeLinks } = store;
 

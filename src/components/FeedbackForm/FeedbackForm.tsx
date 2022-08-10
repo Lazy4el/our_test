@@ -20,7 +20,15 @@ import InputMask from 'react-input-mask';
 import s from './FeedbackForm.module.css';
 import { width } from '@mui/system';
 
-function FeedbackForm({ isOpen, setIsOpen }: { isOpen?: boolean; setIsOpen?: any }) {
+function FeedbackForm({
+  isOpen,
+  setIsOpen,
+  closeIcon = true,
+}: {
+  isOpen?: boolean;
+  setIsOpen?: any;
+  closeIcon?: boolean;
+}) {
   // function FeedbackForm({ isOpen: boolean, setIsOpen: Dispatch<SetStateAction<boolean>>}) {
   const {
     register,
@@ -75,7 +83,8 @@ function FeedbackForm({ isOpen, setIsOpen }: { isOpen?: boolean; setIsOpen?: any
           </Box>
         </DialogContent>
       </Dialog>
-      <CloseIcon onClick={() => setIsOpen(false)} sx={{ marginLeft: '93%' }} />
+      {closeIcon && <CloseIcon onClick={() => setIsOpen(false)} sx={{ marginLeft: '93%' }} />}
+
       <Typography variant="h3" noWrap sx={{ margin: '10px auto 20px auto' }}>
         Оставить заявку
       </Typography>
@@ -83,7 +92,7 @@ function FeedbackForm({ isOpen, setIsOpen }: { isOpen?: boolean; setIsOpen?: any
       <Box component="div" sx={{ margin: 0, padding: 0 }}>
         <TextField
           className={s.textField}
-          autoFocus
+          autoFocus={closeIcon}
           label="Введите ваше имя *"
           {...register('name', {
             required: 'Обязательное поле',
@@ -136,7 +145,7 @@ function FeedbackForm({ isOpen, setIsOpen }: { isOpen?: boolean; setIsOpen?: any
           rows={6}
           {...register('body')}
         />
-        <Button disabled={isSubmit} type="submit" variant="contained" sx={feedbackButton.feedbackButtonAside}>
+        <Button type="submit" variant="contained" sx={feedbackButton.feedbackButtonAside}>
           Отправить
         </Button>
       </Box>
