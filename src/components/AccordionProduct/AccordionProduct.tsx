@@ -10,7 +10,6 @@ import ProductCard from '../ProductCard/ProductCard';
 import { MyContext } from '../../Store/Store';
 import { Box } from '@mui/material';
 import Alert from '@mui/material/Alert';
-import { motion } from 'framer-motion';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -31,16 +30,6 @@ function TabPanel(props: TabPanelProps) {
     </div>
   );
 }
-const blockAnimation = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-  },
-};
 
 function a11yProps(index: number) {
   return {
