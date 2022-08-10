@@ -1,8 +1,18 @@
+.AccordionProduct__box,
 .AccordionProduct {
+  padding: 50px 0;
+}
+
+.AccordionProduct__tabs .MuiTabs-flexContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AccordionProduct__TabPanel {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding-top: 40px;
   text-align: left;
 }
 
@@ -12,9 +22,53 @@
   gap: 40px;
 }
 
+.AccordionProduct__TabPanel_transport {
+  gap: 20px;
+}
+
 .AccordionProduct__titleCategory {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
   grid-column: 1/5;
+}
+
+@media (max-width: 1140px) {
+  .AccordionProduct__Accordion_item {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px 20px;
+  }
+  .AccordionProduct__titleCategory {
+    grid-column: 1/4;
+  }
+}
+
+@media (max-width: 768px) {
+  .AccordionProduct__tabs .MuiTab-root {
+    font-size: 12px;
+  }
+  .AccordionProduct__tabs .MuiTabs-flexContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .AccordionProduct__tabs span {
+    display: none;
+  }
+
+  .AccordionProduct__Accordion_item {
+    grid-template-columns: 1fr 1fr;
+  }
+  .AccordionProduct__titleCategory {
+    grid-column: 1/3;
+  }
+}
+
+@media (max-width: 576px) {
+  .AccordionProduct__Accordion_item {
+    grid-template-columns: 1fr;
+  }
+  .AccordionProduct__titleCategory {
+    grid-column: 1/2;
+  }
 }
