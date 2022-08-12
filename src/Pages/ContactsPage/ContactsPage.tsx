@@ -23,8 +23,9 @@ const ContactsPage: FC = (props) => {
               ООО"НефтеХимПолимер"
             </Typography>
             <Typography variant="body2" sx={contactsStyle.typography}>
-              Юр. Адрес:420076, г. Казань ул. Пороховая, д. 25 Почтовый адрес: 420076, г. Казань, а/я22 ИНН:
-              16657082570, КПП: 165601001, ОГРН: 1091690005945
+              Юр. Адрес:420076, г. Казань ул. Пороховая, д. 25
+              <br /> Почтовый адрес: 420076, г. Казань, а/я22
+              <br /> ИНН: 16657082570 <br /> КПП: 165601001 <br /> ОГРН: 1091690005945
             </Typography>
             <Typography variant="h3" sx={contactsStyle.typography}>
               Наш фактический адрес
@@ -43,10 +44,13 @@ const ContactsPage: FC = (props) => {
                 НефтеХим<span className="logo-ink-span">Полимер</span>
               </span>
             </div>
-            <Typography variant="h3" sx={contactsStyle.typography}>
+            <Typography
+              variant="h3"
+              sx={{ ...contactsStyle.typography, display: 'inline-block', margin: '0 auto 5px auto' }}
+            >
               ООО"НефтеХимПолимер"
             </Typography>
-            <Typography variant="body2" sx={contactsStyle.typography}>
+            <Typography variant="body2" sx={{ ...contactsStyle.typography, textAlign: 'center' }}>
               Для заказа, а также уточнения любых вопросов о доставке и отгрузке оптовых партий товаров вы можете
               обратиться к нам по телефонам: +7 (843) 212-57-00 (Казань).
             </Typography>
@@ -77,8 +81,12 @@ const ContactsPage: FC = (props) => {
               NefteKhimPolymer. OOO
             </Typography>
             <Typography variant="body2" sx={contactsStyle.typography}>
-              Address: 420076, Kazan, st. Porokhovaya Ste. 25 Post address: 420076, Kazan, P.O. Box 22 TIN: 1657082570,
-              KPP: 165601001, OGRN: 1091690005945
+              Address: 420076, Kazan, st. Porokhovaya Ste. 25
+              <br /> Post address: 420076, Kazan, P.O. Box 22
+              <br /> TIN: 1657082570
+              <br />
+              KPP: 165601001
+              <br /> OGRN: 1091690005945
             </Typography>
             <Typography variant="h3" sx={contactsStyle.typography}>
               Actual address
@@ -93,7 +101,7 @@ const ContactsPage: FC = (props) => {
           <FeedbackForm closeIcon={false} />
         </Grid>
         <Grid item xs={12} md={6} sx={{ ...contactsStyle.item, borderBottom: 'none' }}>
-          <Typography variant="h3" sx={{ margin: '0 0 5px 0' }}>
+          <Typography variant="h3" sx={{ margin: '0 0 30px 0' }}>
             Мы на карте
           </Typography>
           <YandexMap />

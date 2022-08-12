@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { Button, Dialog, DialogTitle, Divider } from '@mui/material';
-import { headerLinks } from '../Header/data';
 import logoImg from '../../assets/img/logo.png';
 import { Link, To } from 'react-router-dom';
 import { footerMaterialStyle } from './footerMatStyle';
@@ -12,8 +11,12 @@ import { footerMaterialStyle } from './footerMatStyle';
 import s from './Footer.module.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import FormButton from '../FormGroup/FormButton';
+import { MyContext } from '../../Store/Store';
 
 function Footer() {
+  const store = useContext(MyContext);
+  const { homeLinks } = store;
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -21,7 +24,7 @@ function Footer() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, marginTop: '20px' }}>
+    <Box sx={{ flexGrow: 1, marginTop: '20px', marginBottom: '50px' }}>
       <Divider variant="middle" />
       <Grid
         wrap="nowrap"
@@ -48,7 +51,7 @@ function Footer() {
         <Grid item xs={4} md={3} sx={{ border: 'none', display: { xs: 'none', sm: 'block' } }}>
           <span className={s.company}>Компания</span>
           <ul className={s.list}>
-            {headerLinks.map(
+            {homeLinks.map(
               (el: {
                 key: React.Key | null | undefined;
                 link: To;

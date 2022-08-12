@@ -12,7 +12,7 @@ const coordinates = [
 
 const YandexMap = () => (
   <YMaps>
-    <Map width="100%" height="80%" defaultState={mapData}>
+    <Map width="100%" height="400px" defaultState={mapData}>
       {coordinates.map((coordinate, index) => (
         <Placemark key={index} geometry={coordinate} />
       ))}
