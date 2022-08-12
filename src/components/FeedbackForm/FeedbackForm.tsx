@@ -64,8 +64,8 @@ function FeedbackForm({
       ref={rootRef}
     >
       <Dialog fullWidth open={isOpenModal} onClose={() => setIsOpenModal(false)}>
-        <DialogContent sx={{ overflow: 'hidden' }}>
-          <Box sx={{ minHeight: '600px' }}>
+        <DialogContent>
+          <Box sx={{ minHeight: '560px' }}>
             <Alert
               icon={false}
               sx={{
@@ -83,22 +83,7 @@ function FeedbackForm({
           </Box>
         </DialogContent>
       </Dialog>
-      {closeIcon && (
-        <CloseIcon
-          onClick={() => setIsOpen(false)}
-          sx={{
-            marginLeft: '93%',
-            ':hover': {
-              borderRadius: '50%',
-              background: '#dbd7d7',
-              cursor: 'pointer',
-            },
-            ':active': {
-              background: '#989898',
-            },
-          }}
-        />
-      )}
+      {closeIcon && <CloseIcon onClick={() => setIsOpen(false)} sx={{ marginLeft: '93%' }} />}
 
       <Typography variant="h3" noWrap sx={{ margin: '10px auto 20px auto' }}>
         Оставить заявку
