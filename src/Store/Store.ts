@@ -268,7 +268,7 @@ export const headerLinks: IheaderLinks[] = [
   },
   {
     label: 'Контакты',
-    link: '/about',
+    link: '/contacts',
     name: 'about',
     isActive: false,
     key: 'werwerwww',

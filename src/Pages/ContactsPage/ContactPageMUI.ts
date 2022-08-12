@@ -15,6 +15,7 @@ const contactsStyle = {
     border: 'none',
     backgroundColor: 'white !important',
     margin: { xs: '0 0 10px 0', md: '0 0 15px 0' },
+    textAlign: 'left',
   },
   paper: {
     transition: 'none !important',
